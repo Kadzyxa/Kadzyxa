@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="styleDZ.css" />
+
+		<script src="https://www.google.com/jsapi"></script>
+		<script>
+			function draw() {
+				for (let index = 1; index < 11; index++) {
+					var o = 0,
+						x = 0,
+						z = 0,
+						y = 0
+					google.load('visualization', '1', { packages: ['corechart'] })
+					google.setOnLoadCallback(drawChart)
+					function drawChart() {
+						var f = document.getElementById('f_' + index).value
+						var res1 = Number.parseInt(
+							document.getElementById('res1_' + index).value
+						)
+						var res2 = Number.parseInt(
+							document.getElementById('res2_' + index).value
+						)
+
+						if (res1 == 5 && res2 == 5) o++
+						if (res1 == 4 || res2 == 4) x++
+						if (res1 == 3 || res2 == 3) z++
+						if (res1 == 2 || res2 == 2) y++
+
+						var data = google.visualization.arrayToDataTable([
+							['Студенты', 'Кол-во'],
+							['Отличники', o],
+							['Хорошо успевающие', x],
+							['Успевающие', z],
+							['Неуспевающие', y],
+						])
+						var options = {
+							title: 'Успеваемость студентов ',
+							is3D: true,
+							pieResidueSliceLabel: 'Остальное',
+						}
+						var chart = new google.visualization.PieChart(
+							document.getElementById('team_all')
+						)
+						chart.draw(data, options)
+					}
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<div class="button_1">
+			<button class="btn" id="button" onclick="draw()">Тыкай</button>
+		</div>
+		<form name="form">
+			<div class="content">
+				<div>
+					<h1>1-ый студент</h1>
+					<p>
+						Фамилия: <input type="text" size="5" class="input_tree" id="f_1" />
+					</p>
+					<p>
+						Оценка_1:
+						<input type="text" size="5" class="input_tree" id="res1_1" />
+					</p>
+					<p>
+						Оценка_2:
+						<input type="text" size="5" class="input_tree" id="res2_1" />
+					</p>
+					<h1>2-ой студент</h1>
+					<p>
+						Фамилия: <input type="text" size="5" class="input_tree" id="f_2" />
+					</p>
+					<p>
+						Оценка_1:
+						<input type="text" size="5" class="input_tree" id="res1_2" />
+					</p>
+					<p>
+						Оценка_2:
+						<input type="text" size="5" class="input_tree" id="res2_2" />
+					</p>
+					<h1>3-ий студент</h1>
+					<p>
+						Фамилия: <input type="text" size="5" class="input_tree" id="f_3" />
+					</p>
+					<p>
+						Оценка_1:
+						<input type="text" size="5" class="input_tree" id="res1_3" />
+					</p>
+					<p>
+						Оценка_2:
+						<input type="text" size="5" class="input_tree" id="res2_3" />
+					</p>
+					<h1>4-ый студент</h1>
+					<p>
+						Фамилия: <input type="text" size="5" class="input_tree" id="f_4" />
+					</p>
+					<p>
+						Оценка_1:
+						<input type="text" size="5" class="input_tree" id="res1_4" />
+					</p>
+					<p>
+						Оценка_2:
+						<input type="text" size="5" class="input_tree" id="res2_4" />
+					</p>
+				</div>
+				<div class="grupe_2">
+					<h1>5-ый студент</h1>
+					<p>
+						Фамилия: <input type="text" size="5" class="input_tree" id="f_5" />
+					</p>
+					<p>
+						Оценка_1:
+						<input type="text" size="5" class="input_tree" id="res1_5" />
+					</p>
+					<p>
+						Оценка_2:
+						<input type="text" size="5" class="input_tree" id="res2_5" />
+					</p>
+					<h1>6-ой студент</h1>
+					<p>
+						Фамилия: <input type="text" size="5" class="input_tree" id="f_6" />
+					</p>
+					<p>
+						Оценка_1:
+						<input type="text" size="5" class="input_tree" id="res1_6" />
+					</p>
+					<p>
+						Оценка_2:
+						<input type="text" size="5" class="input_tree" id="res2_6" />
+					</p>
+					<h1>7-ой студент</h1>
+					<p>
+						Фамилия: <input type="text" size="5" class="input_tree" id="f_7" />
+					</p>
+					<p>
+						Оценка_1:
+						<input type="text" size="5" class="input_tree" id="res1_7" />
+					</p>
+					<p>
+						Оценка_2:
+						<input type="text" size="5" class="input_tree" id="res2_7" />
+					</p>
+					<h1>8-ой студент</h1>
+					<p>
+						Фамилия: <input type="text" size="5" class="input_tree" id="f_8" />
+					</p>
+					<p>
+						Оценка_1:
+						<input type="text" size="5" class="input_tree" id="res1_8" />
+					</p>
+					<p>
+						Оценка_2:
+						<input type="text" size="5" class="input_tree" id="res2_8" />
+					</p>
+				</div>
+				<div class="grupe_3">
+					<h1>9-ый студент</h1>
+					<p>
+						Фамилия: <input type="text" size="5" class="input_tree" id="f_9" />
+					</p>
+					<p>
+						Оценка_1:
+						<input type="text" size="5" class="input_tree" id="res1_9" />
+					</p>
+					<p>
+						Оценка_2:
+						<input type="text" size="5" class="input_tree" id="res2_9" />
+					</p>
+					<h1>10-ый студент</h1>
+					<p>
+						Фамилия: <input type="text" size="5" class="input_tree" id="f_10" />
+					</p>
+					<p>
+						Оценка_1:
+						<input type="text" size="5" class="input_tree" id="res1_10" />
+					</p>
+					<p>
+						Оценка_2:
+						<input type="text" size="5" class="input_tree" id="res2_10" />
+					</p>
+				</div>
+			</div>
+		</form>
+		<div id="team_all"></div>
+	</body>
+</html>
