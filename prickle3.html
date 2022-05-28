@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="style3.css" />
+	</head>
+
+	<body>
+		<div class="pop">
+			<table id="table_1" cellspacing="0" cellpadding="0">
+				<tr>
+					<th><img src="/images/yan.jpg" alt="" /></th>
+					<th><img src="/images/yan.jpg" alt="" /></th>
+					<th><img src="/images/yan.jpg" alt="" /></th>
+				</tr>
+				<tr>
+					<th><img src="/images/yan.jpg" alt="" /></th>
+					<th><img src="/images/yan.jpg" alt="" /></th>
+					<th><img src="/images/yan.jpg" alt="" /></th>
+				</tr>
+				<tr>
+					<th><img src="/images/yan.jpg" alt="" /></th>
+					<th><img src="/images/yan.jpg" alt="" /></th>
+					<th><img src="/images/yan.jpg" alt="" /></th>
+				</tr>
+			</table>
+			<div class="content">
+				<p>
+					Border-Wigth:
+					<input
+						type="range"
+						min="0"
+						max="40"
+						step="1"
+						value="0"
+						oninput="b_width()"
+						id="b_width"
+					/>
+				</p>
+				<p>
+					Border-Style
+					<select oninput="b_style()" id="b_style">
+						<option>solid</option>
+						<option>hidden</option>
+						<option>dotted</option>
+						<option>dashed</option>
+						<option>groove</option>
+						<option>double</option>
+						<option>ridge</option>
+						<option>inset</option>
+						<option>outset</option>
+					</select>
+				</p>
+				<p>
+					Border-Color
+					<select oninput="b_color()" id="b_color">
+						<option>green</option>
+						<option>red</option>
+						<option>blue</option>
+						<option>pink</option>
+						<option>yellow</option>
+						<option>black</option>
+						<option>purple</option>
+						<option>orange</option>
+						<option>brown</option>
+					</select>
+				</p>
+				<p>
+					Cellspacing:
+					<input
+						type="range"
+						min="0"
+						max="40"
+						step="1"
+						value="0"
+						oninput="call_s()"
+						id="call_s"
+					/>
+				</p>
+				<p>
+					Cellpadding:
+					<input
+						type="range"
+						min="0"
+						max="40"
+						step="1"
+						value="0"
+						oninput="call_p()"
+						id="call_p"
+					/>
+				</p>
+			</div>
+		</div>
+		<script>
+			function call_s() {
+				size = document.getElementById('call_s').value
+				tab = document.getElementById('table_1')
+				tab.cellSpacing = size
+			}
+
+			function call_p() {
+				size = document.getElementById('call_p').value
+				tab = document.getElementById('table_1')
+				tab.cellPadding = size
+			}
+
+			function b_width() {
+				size = document.getElementById('b_width').value
+				tab = document.getElementById('table_1')
+				tab.style.borderWidth = size + 'px'
+			}
+			function b_style() {
+				style = document.getElementById('b_style').value
+				tab = document.getElementById('table_1')
+				tab.style.borderStyle = style
+			}
+
+			function b_color() {
+				color = document.getElementById('b_color').value
+				tab = document.getElementById('table_1')
+				tab.style.borderColor = color
+			}
+		</script>
+	</body>
+</html>

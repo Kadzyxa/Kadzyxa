@@ -1,0 +1,22 @@
+.content {
+    font-size: 1.5vw;
+    margin: auto;
+    width: 400px;
+    height: 200px;
+}
+
+#table_1 {
+    width: 600px;
+    height: 600px;
+    border: 10px solid red;
+    margin: auto;
+}
+
+th {
+    border: 3px solid black;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
